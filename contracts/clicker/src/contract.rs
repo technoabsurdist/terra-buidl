@@ -99,5 +99,5 @@ fn query_count(deps: Deps) -> StdResult<CountResponse> {
 fn query_scores(deps: Deps) -> StdResult<ScoreResponse> {
     let state = STORAGE.load(deps.storage)?; 
     Ok(ScoreResponse { scores: state.scores })
-    
+
 }
