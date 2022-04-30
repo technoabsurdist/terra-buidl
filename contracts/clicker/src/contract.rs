@@ -4,7 +4,7 @@ use cosmwasm_std::{to_binary, Binary, Deps, DepsMut, Env, MessageInfo, Response,
 use cw2::set_contract_version; 
 
 use crate::error::ContractError; 
-use crate::msg::{CristianoRonaldoResponse, InstantiateMsg, QueryMsg}; 
+use crate::msg::{CountResponse, InstantiateMsg, QueryMsg}; 
 use crate::state::{State, STATE}; 
 
 
@@ -22,7 +22,7 @@ pub fn instantiate(
 ) -> Result<Response, ContractError> {
     // Storing stuff in a variable called state of type State
     let state = State {
-        cristiano_ronaldo: msg.cristiano_ronaldo, 
+        count: msg.count, 
         // clone is important because we don't want to _give_ ownership
         owner: info.sender.clone(), 
     }; 
@@ -37,7 +37,7 @@ pub fn instantiate(
     Ok(Response::new()
         .add_attribute("method", "instantiate")
         .add_attribute("owner", info.sender)
-        .add_attribute("cristiano_ronaldo", msg.cristiano_ronaldo.to_string()))
+        .add_attribute("count", msg.count.to_string()))
 }
 
 // query is the special cosmwasm function to read data from contract
@@ -45,11 +45,11 @@ pub fn instantiate(
 // this time we need Deps (not DepsMut) because we don't need it to be mutable
 pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Binary> {
     match msg {
-        QueryMsg::GetCristianoRonaldo {} => to_binary(&query_cristiano_ronaldo(deps)?), 
+        QueryMsg::GetCount {} => to_binary(&query_count(deps)?), 
     }
 }
 
-fn query_cristiano_ronaldo(deps: Deps) -> StdResult<CristianoRonaldoResponse> {
+fn query_count(deps: Deps) -> StdResult<CountResponse> {
     let state = STATE.load(deps.storage)?; 
-    Ok(CristianoRonaldoResponse { cristiano_ronaldo: state.cristiano_ronaldo })
+    Ok(CountResponse { count: state.count })
 }
