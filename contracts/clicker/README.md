@@ -104,3 +104,7 @@ Workspace contains:
 
 Follow [Gitpod Getting Started](https://www.gitpod.io/docs/getting-started) and launch your workspace.
 
+
+Production Status: 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c93f4d76-c770-4702-9dce-407b59e559ea/deploy-status)](https://app.netlify.com/sites/stellular-brioche-7efe2b/deploys)
