@@ -2,18 +2,11 @@
 use cosmwasm_std::entry_point; 
 use cosmwasm_std::{to_binary, Binary, Deps, DepsMut, Env, MessageInfo, Response, StdResult}; 
 use cw2::set_contract_version; 
-
 use crate::error::ContractError; 
 use crate::msg::{CountResponse, InstantiateMsg, QueryMsg}; 
 use crate::state::{State, STATE}; 
 
-
-#[cgf(not(features = "library"))] // only compile this code if the library features isn't enabled
-// these three are import statements
-use cosmwasm_std::entry_point; 
-use cosmwasm_std::{DepsMut, Env, MessageInfo, Response}; 
-use cw2::set_contract_version; 
-
+#[cfg(not(features = "library"))] // only compile this code if the library features isn't enabled
 // version info for migration info 
 const CONTRACT_NAME: &str = "crates.io.clicker"; 
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION"); 

@@ -1,1 +1,1 @@
-5b8c8618db43fa2868622239757d4908f4acdeefa57adae5052427cb09d82e62  clicker.wasm
+bf3619c55cafb3203baeba4063b7fe78a44e485ccb2b2dcdabe7e0d58354583d  clicker.wasm

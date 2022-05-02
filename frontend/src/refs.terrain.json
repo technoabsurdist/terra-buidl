@@ -12,5 +12,13 @@
         "default": "terra1sh36qn08g4cqg685cfzmyxqv2952q6r8gpczrt"
       }
     }
+  },
+  "testnet": {
+    "clicker": {
+      "codeId": "68563",
+      "contractAddresses": {
+        "default": "terra1mwqpp6f36z3zaj6rn8f7xwgdp3a6nxkmyhy579"
+      }
+    }
   }
 }

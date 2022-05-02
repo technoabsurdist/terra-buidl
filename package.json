@@ -4,7 +4,8 @@
   "description": "",
   "dependencies": {
     "@iboss/terrain": "0.0.8",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "yarn": "^1.22.18"
   },
   "workspaces": [
     "frontend"
